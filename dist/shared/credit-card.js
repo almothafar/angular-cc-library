@@ -97,20 +97,18 @@ var CreditCard = (function () {
     };
     CreditCard.restrictNumeric = function (e) {
         var input;
-        if (e.metaKey || e.ctrlKey) {
+        // 9 = tab
+        if (e.metaKey || e.ctrlKey || e.which === 9) {
             return true;
-        }
-        if (e.which === 32) {
-            return false;
         }
         if (e.which === 0) {
             return true;
         }
-        if (e.which < 33) {
+        if (e.which < 32) {
             return true;
         }
         input = String.fromCharCode(e.which);
-        return !!/[\d\s]/.test(input);
+        return /[\d\s]/.test(input);
     };
     CreditCard.hasTextSelected = function (target) {
         return target.selectionStart !== null && target.selectionStart !== target.selectionEnd;
