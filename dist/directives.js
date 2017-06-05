@@ -10,11 +10,6 @@ var core_1 = require("@angular/core");
 var credit_card_format_directive_1 = require("./directives/credit-card-format.directive");
 var expiry_format_directive_1 = require("./directives/expiry-format.directive");
 var cvc_format_directive_1 = require("./directives/cvc-format.directive");
-var CREDIT_CARD_LIBRARY_DIRECTIVES = [
-    credit_card_format_directive_1.CreditCardFormatDirective,
-    expiry_format_directive_1.ExpiryFormatDirective,
-    cvc_format_directive_1.CvcFormatDirective
-];
 var CreditCardDirectivesModule = (function () {
     function CreditCardDirectivesModule() {
     }
@@ -22,8 +17,12 @@ var CreditCardDirectivesModule = (function () {
 }());
 CreditCardDirectivesModule = __decorate([
     core_1.NgModule({
-        declarations: [CREDIT_CARD_LIBRARY_DIRECTIVES],
-        exports: [CREDIT_CARD_LIBRARY_DIRECTIVES]
+        declarations: [credit_card_format_directive_1.CreditCardFormatDirective,
+            expiry_format_directive_1.ExpiryFormatDirective,
+            cvc_format_directive_1.CvcFormatDirective],
+        exports: [credit_card_format_directive_1.CreditCardFormatDirective,
+            expiry_format_directive_1.ExpiryFormatDirective,
+            cvc_format_directive_1.CvcFormatDirective]
     })
 ], CreditCardDirectivesModule);
 exports.CreditCardDirectivesModule = CreditCardDirectivesModule;
